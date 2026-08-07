@@ -567,110 +567,141 @@ section h2::after{
     line-height:1.8;
 
 }
-
 /* ==========================================
    EXPERIENCE
 ========================================== */
 
 #experience{
-
     background:#F8FBFF;
-
 }
 
 .timeline{
-
     max-width:900px;
-
     margin:auto;
-
 }
 
 .timeline-item{
-
-    width:100%;
-
-    background:white;
-
-    padding:45px;
-
-    border-radius:22px;
-
+    background:#fff;
+    padding:50px;
+    border-radius:24px;
     box-shadow:0 20px 50px rgba(0,0,0,.08);
-
-    opacity:1;
-
-    transform:none;
-
+    border:1px solid #EDF2F7;
 }
 
 .timeline-date{
-
     display:inline-block;
-
+    padding:9px 20px;
     background:#2F80ED;
-
-    color:white;
-
-    padding:8px 18px;
-
-    border-radius:30px;
-
+    color:#fff;
     font-size:14px;
-
-    margin-bottom:20px;
-
     font-weight:600;
-
+    border-radius:40px;
+    margin-bottom:25px;
 }
 
 .timeline-item h3{
-
-    font-size:30px;
-
+    font-size:42px;
+    line-height:1.2;
     color:#1F2937;
-
-    margin-bottom:10px;
-
+    margin-bottom:18px;
 }
 
-.timeline-item h4{
+.company-header{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:12px;
+}
 
+.company-header h4{
+    margin:0;
     color:#2F80ED;
-
-    margin-bottom:20px;
-
+    font-size:24px;
+    font-weight:700;
 }
 
-.timeline-item p{
-
+.company-header span{
     color:#6B7280;
+    font-size:16px;
+}
 
+.company-header span::before{
+    content:"•";
+    margin-right:12px;
+    color:#CBD5E1;
+}
+
+.company-description{
+    color:#6B7280;
+    font-size:16px;
     line-height:1.8;
+    font-style:italic;
+    max-width:720px;
+    margin-bottom:28px;
+}
 
+.job-type{
+    display:inline-block;
+    background:#EAF4FF;
+    color:#2F80ED;
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:25px;
+}
+
+.experience-description{
+    color:#4B5563;
+    font-size:17px;
+    line-height:1.9;
+    max-width:760px;
+    margin-bottom:35px;
 }
 
 .experience-list{
-
     list-style:none;
-
     padding:0;
+    margin:0;
 
-    margin-top:25px;
-
+    display:grid;
+    grid-template-columns:repeat(2,minmax(260px,1fr));
+    gap:18px 40px;
 }
 
 .experience-list li{
-
-    margin-bottom:14px;
-
-    color:#555;
-
+    position:relative;
+    padding-left:30px;
+    color:#4B5563;
     line-height:1.8;
-
 }
 
+.experience-list li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    top:0;
+    color:#2F80ED;
+    font-weight:700;
+    font-size:18px;
+}
 
+@media (max-width:900px){
+
+    .timeline-item{
+        padding:35px;
+    }
+
+    .timeline-item h3{
+        font-size:34px;
+    }
+
+    .experience-list{
+        grid-template-columns:1fr;
+    }
+
+}
 
 /* ==========================================
    PROJECTS
@@ -701,35 +732,23 @@ section h2::after{
 /* Grid */
 
 #projectContainer{
-
     display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:35px;
-
+    margin-top:35px;
 }
 
 /* Card */
-
 .project-card{
-
     background:#fff;
-
     border-radius:22px;
-
     overflow:hidden;
-
     box-shadow:0 18px 45px rgba(0,0,0,.08);
-
     transition:.4s;
-
     border:1px solid #edf2f7;
 
     display:flex;
-
     flex-direction:column;
-
 }
 
 .project-card:hover{
@@ -830,11 +849,16 @@ section h2::after{
 /* Inhalt */
 
 .project-content{
-
     padding:30px;
 
+    display:flex;
+    flex-direction:column;
+    flex:1;
 }
-
+.project-content .btn{
+    margin-top:auto;
+    align-self:flex-start;
+}
 .project-content h3{
 
     font-size:24px;
@@ -1574,5 +1598,21 @@ footer hr{
 .footer-links a:hover{
 
     color:white;
+
+}
+
+@media (max-width:1100px){
+
+    #projectContainer{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media (max-width:700px){
+
+    #projectContainer{
+        grid-template-columns:1fr;
+    }
 
 }
